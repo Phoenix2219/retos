@@ -1,10 +1,10 @@
-# retos
+# RETOS
 
 A new Flutter project + Net Core + SQL SERVER.
 
 #### Creacion de WebApi
 ```
-dotnet new webapi --use-controllers -o TodoApi
+dotnet new webapi --use-controllers -o UsuariosApi
 ```
 ```
 cd UsuariosApi
