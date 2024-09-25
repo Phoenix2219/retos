@@ -1,16 +1,17 @@
 # retos
 
-A new Flutter project.
+A new Flutter project + Net Core + SQL SERVER.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Creacion de WebApi
+```
+donet new webapi -o UsuariosApi
+```
+```
+cd UsuariosApi
+```
+```
+dotnet add package Microsoft.EntityFrameworkCore.InMemory --prerelease
+```
+```
+code -r ../UsuariosApi
+```
