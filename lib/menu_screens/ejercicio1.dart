@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Ejercicio1 extends StatefulWidget{
+class Ejercicio1 extends StatefulWidget {
   @override
   _Ejercicio1 createState() => _Ejercicio1();
 }
@@ -25,18 +25,21 @@ class _Ejercicio1 extends State<Ejercicio1> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextField(   
-              autofocus: true,           
-              controller: _lado,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                labelText: 'Ingrese el lado del cuadrado',
-                border: OutlineInputBorder(),
+            Container(
+              padding: const EdgeInsets.only(right: 30,left: 30),
+              child: TextField(
+                autofocus: true,
+                controller: _lado,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Ingrese el lado del cuadrado',
+                  border: OutlineInputBorder(),
+                ),
               ),
-              ),
-            SizedBox(height: 20),
+            ),
+            SizedBox(height: 10),
             ElevatedButton(
               onPressed: _calcularArea,
               child: Text('Calcular Area'),

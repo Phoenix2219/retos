@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Ejercicio3 extends StatefulWidget{
+class Ejercicio3 extends StatefulWidget {
   @override
   _Ejercicio3 createState() => _Ejercicio3();
 }
@@ -11,18 +11,16 @@ class _Ejercicio3 extends State<Ejercicio3> {
   String _condicion = "";
 
   void _calcularEdad() {
-    
     int edad = int.tryParse(_edad.text) ?? 0;
-    setState(() {      
-      if(edad<18){
+    setState(() {
+      if (edad < 18) {
         _condicion = "menor";
-      }else{
+      } else {
         _condicion = "mayor";
       }
-    }); 
+    });
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,23 +30,26 @@ class _Ejercicio3 extends State<Ejercicio3> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextField(          
-              autofocus: true,
-              controller: _edad,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                labelText: 'Ingrese su edad',
-                border: OutlineInputBorder(),
+            Container(
+              padding: const EdgeInsets.only(right: 30, left: 30),
+              child: TextField(
+                autofocus: true,
+                controller: _edad,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Ingrese su edad',
+                  border: OutlineInputBorder(),
+                ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             ElevatedButton(
               onPressed: _calcularEdad,
               child: Text('Calcular edad'),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             if (_condicion.isNotEmpty)
               Text(
                 'Persona $_condicion de edad',

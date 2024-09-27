@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:retos/menu_screens/lector_qr.dart';
 import 'ejercicio1.dart';
 import 'ejercicio2.dart';
 import 'ejercicio3.dart';
@@ -30,6 +31,7 @@ class HomeState extends State<Home>{
       case 7: return Ejercicio8();
       case 8: return Ejercicio9();
       case 9: return Ejercicio10();
+      case 10: return const LectorQr();
     }
   }
 
@@ -38,7 +40,7 @@ class HomeState extends State<Home>{
     setState(() {
       _selectDrawerItem = pos;  
     });    
-  }
+  }  
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +65,7 @@ class HomeState extends State<Home>{
                   ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.blue.shade600, Colors.purple.shade600],
+                    colors: [Colors.blue.shade600, Color.fromRGBO(84, 88, 83, 1)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -73,7 +75,7 @@ class HomeState extends State<Home>{
             DrawerHeader(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.blue.shade600, Colors.purple.shade600],
+                  colors: [Color.fromARGB(255, 12, 12, 11),Color.fromRGBO(84, 88, 83, 1),],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -81,12 +83,12 @@ class HomeState extends State<Home>{
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     backgroundImage: AssetImage('assets/user_profile.png'),
                     radius: 40,
                   ).animate().fadeIn(delay: 500.ms), // Animación al cargar
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'Bienvenido',
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ).animate().slideY(delay: 800.ms), // Animación de deslizamiento
@@ -96,7 +98,7 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 1',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (0 == _selectDrawerItem),
               onTap: (){                
                 _onSelectItem(0);
@@ -105,7 +107,7 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 2',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (1 == _selectDrawerItem),
               onTap: () {
                 _onSelectItem(1);
@@ -114,7 +116,7 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 3',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (2 == _selectDrawerItem),
               onTap: () {
                 _onSelectItem(2);
@@ -123,7 +125,7 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 4',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (3 == _selectDrawerItem),
               onTap: () {
                 _onSelectItem(3);
@@ -132,7 +134,7 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 5',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (4 == _selectDrawerItem),
               onTap: () {
                 _onSelectItem(4);
@@ -141,7 +143,7 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 6',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (5 == _selectDrawerItem),
               onTap: () {
                 _onSelectItem(5);
@@ -150,7 +152,7 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 7',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (6 == _selectDrawerItem),
               onTap: () {
                 _onSelectItem(6);
@@ -159,7 +161,7 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 8',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (7 == _selectDrawerItem),
               onTap: () {
                 _onSelectItem(7);
@@ -168,7 +170,7 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 9',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (8 == _selectDrawerItem),
               onTap: () {
                 _onSelectItem(8);
@@ -177,11 +179,20 @@ class HomeState extends State<Home>{
             _buildAnimatedListTile(
               text: 'Ejercicio 10',
               icon: Icons.star,
-              color: Colors.purple.shade600,
+              color: Color.fromRGBO(84, 88, 83, 1),
               selected: (9 == _selectDrawerItem),
               onTap: () {
                 _onSelectItem(9);
               }
+            ),
+            _buildAnimatedListTile(
+              text: 'Lector qr',
+              icon: Icons.star,
+              color: Color.fromRGBO(84, 88, 83, 1),
+              selected: (10 == _selectDrawerItem),
+              onTap: () {
+                _onSelectItem(10);
+              },
             ),
           ],
         ),
